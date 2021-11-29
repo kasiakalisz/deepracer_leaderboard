@@ -1,0 +1,61 @@
+<!DOCTYPE html> <!-- Defining the root element of an HTML page: -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formstyles.css">
+
+
+    <title> DeepRacer Register Player </title>
+</head>
+
+<body>
+
+    <div class="container card card-color">
+        <h2 style=text-align:center> Register Player <img src="photos/deepracer_logo.jpg" alt="deepracer logo"> </h2>
+        <form action="" id="participantForm">
+            <div class="form-row">
+                <label for="name">First Name</label>
+                <input type="text" class="input-text input-text-block w-100" id="name" name="name">
+
+                <label for="surname">Surname</label>
+                <input type="text" class="input-text input-text-block w-100" id="surname" name="surname">
+
+                <label for="league">Legue name </label>
+                <input type="text" class="input-text input-text-block w-100" id="league" name="league">
+
+
+                <label for="track"> Track Name </label>
+                <input type="text" class="input-text input-text-block w-100" id="track" name="track">
+
+                <label for="email"> Email </label>
+                <input type="text" class="input-text input-text-block w-100" id="email" name="email">
+
+
+                <label for="jobtitle"> Job Title </label>
+                <input type="text" class="input-text input-text-block w-100" id="jobtitle" name="jobtitle">
+
+                <label for="company"> Company </label>
+                <input type="text" class="input-text input-text-block w-100" id="company" name="company">
+            </div>
+
+            <div class="form-row mx-auto">
+                <button type="submit" class="btn-submit" id="addparticipant">
+                    Submit
+                </button>
+            </div>
+    </div>
+    </form>
+
+    <script src="js/service/app.js"></script>
+    <br>
+    <div class="footer">
+
+        <p> <img src="photos/in4.0_logo_wide.png" alt="in4.0 logo"></p>
+
+        <p>© 2020. IN4.0 Group</p>
+    </div>
+</body>
+
+</html>

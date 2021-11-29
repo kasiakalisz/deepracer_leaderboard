@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/formstyles.css">
+    <title>Update Lap</title>
+</head>
+
+<body>
+
+    <div class="container card card-color">
+        <h2 style=text-align:center> Update Lap <img src="photos/deepracer_logo.jpg" alt="deepracer logo"> </h2>
+        <form action="" id="lapForm">
+            <div class="form-row">
+
+                <label for="email"> Email </label>
+                <input type="text" class="input-text input-text-block w-100" id="email" name="email">
+
+                <label for="league">League Name </label>
+                <input type="text" class="input-text input-text-block w-100" id="league" name="league">
+
+
+                <label for="track">Track Name</label>
+                <input type="text" class="input-text input-text-block w-100" id="track" name="track">
+
+                <label for="timeinMillis"> Lap </label>
+                <input type="number" class="input-number input-number-block w-100" id="timeinMillis"
+                    name="timeinMillis">
+
+            </div>
+
+            <div class="form-row mx-auto">
+                <button type="submit" class="btn-submit" id="update_lap">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/service/app.js"></script>
+
+    <br>
+    <br>
+
+    <div class="footer">
+        <img src="photos/in4.0_logo_wide.png" alt="in4.0 logo">
+
+        <p>© 2020. IN4.0 Group</p>
+
+    </div>
+</body>
+
+</html>

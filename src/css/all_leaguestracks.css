@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.menu-logo {
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: 5px;
+}
+
+.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    border-radius: 12px;
+    display: inline-block;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(238, 106, 29, 0.89);
+    text-align: center;
+    text-decoration: none;
+    font-size: small;
+    font-style: normal;
+    cursor: pointer;
+    width: 10%
+}
+
+.menu-bar {
+    background: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    color: #4B378C;
+}
+
+.menu-bar ul li {
+    width: 150px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: rgb(81, 15, 187);
+}
+
+.menu-bar ul li:hover a {
+    color: rgba(238, 106, 29, 0.89);
+}
+
+.sub-menu-1 {
+    display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 {
+    display: block;
+    position: fixed;
+    background: rgb(255, 255, 255);
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+    display: block;
+    margin: 10px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li {
+    width: 150px;
+    border-bottom: 1px dotted rgba(137, 29, 238, 0.89);
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.sub-menu-1 ul li a:hover {
+    color: rgba(137, 29, 238, 0.89);
+}
+
+.fa-angle-right {
+    float: right;
+}
+
+.sub-menu-2 {
+    display: none;
+}
+
+.hover-me:hover .sub-menu-2 {
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 140px;
+    background: rgb(255, 255, 255);
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*Adding background image*/
+
+body {
+    background-color: rgb(10, 10, 10);
+}
+
+table {
+    border-bottom: 5px solid rgb(106, 63, 175);
+    border-top: 5px solid rgb(106, 63, 175);
+    border-right: 5px solid rgb(106, 63, 175);
+    border-left: 5px solid rgb(106, 63, 175);
+    border-collapse: collapse;
+}

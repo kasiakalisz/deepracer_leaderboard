@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/service/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/all_leaguestracks.css">
+    <!-- Connecting to style sheet: -->
+    <title>Leagues</title>
+</head>
+
+<body>
+
+
+    <!--------------------------- MENU BAR ------------------------------------->
+    <div class="menu-logo">
+        <a href="index.html"><img src="../src/photos/in4.0_logo_wide.png" alt="in4group"></a>
+        <!-- Logo -->
+    </div>
+
+    <div class="menu-bar">
+
+        <ul>
+            <li><a href="https://in4group.co.uk/">in4group</a></li>
+            <li><a href="https://aws.amazon.com/deepracer/">AWS</a></li>
+
+            <li><a>Leagues</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="get_leagues.html">All Leagues</a></li>
+                        <li><a href="sunday_league.html">Sunday League</a></li>
+                        <li><a href="december_league.html">December League</a></li>
+                    </ul>
+                </div>
+
+                <li><a>Tracks</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a href="get_track.html">All Tracks</a></li>
+                            <li><a href="ovalbestLap.html">Oval Track</a></li>
+                            <li><a href="reinventbestLap.html">Re:Invent 2018 Track</a></li>
+                        </ul>
+                    </div>
+
+                    <li><a>Manage Race</a>
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="register_player.html">Register Player</a></li>
+                                <li><a href="update_lap.html">Update Lap</a></li>
+                                <li><a href="add_league.html">Create League</a></li>
+                                <li><a href="add_track.html">Create Track</a></li>
+                            </ul>
+                        </div>
+        </ul>
+    </div>
+    <div class="menu-button">Sign In</div>
+    <br>
+
+    <img src="../src/photos/deepracer.png" alt="deepracer logo">
+
+    <h1 style="text-align:center; margin:34px;color: rgb(255,255,255);">All Active in40 group DeepRacer Leagues</h1>
+
+
+    <script>
+        function getLeagues() {
+            var request = new XMLHttpRequest();
+            request.open('GET', 'https://h6ixi3zn9d.execute-api.eu-west-1.amazonaws.com/leagues', true);
+            var raw_response;
+            request.onload = function() {
+                // Begin accessing JSON data here
+                raw_response = JSON.parse(this.response);
+
+                const leagues_list = [];
+                for (var x = 0; x < raw_response['Items'].length; x++) {
+                    leagues_list[x] = [];
+                    leagues_list[x].push(raw_response['Items'][x]['leagueName']);
+                }
+
+                if (request.status >= 200 && request.status < 400) {
+                    new gridjs.Grid({
+                        columns: ["Leagues"],
+                        data: leagues_list
+                    }).render(document.getElementById("tablewrapper"));
+                    console.log(raw_response);
+
+                    //document.getElementById("leagueinjson").innerText = JSON.stringify(raw_response);
+
+                } else {
+                    console.log('error');
+                }
+            }
+            request.send();
+        }
+    </script>
+
+    <body onload="getLeagues()">
+
+        <div id="tablewrapper"></div>
+    </body>
+
+</html>

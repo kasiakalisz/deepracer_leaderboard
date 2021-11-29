@@ -1,0 +1,139 @@
+/*-- body --*/
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+
+/*-- /body --*/
+
+
+/*-- Container & Card --*/
+
+.container {
+    padding: 1rem 2.5rem 1.5rem 2.5rem;
+    margin: auto;
+    width: 30%;
+}
+
+.card {
+    animation: 0.9s ease-in-out 5s 1 fadeIn;
+    box-shadow: 0 10px 12px 0 #4B378C;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card-color {
+    background: rgb(235, 235, 235);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(252, 252, 252, 1) 42%, rgba(255, 255, 255, 1) 100%);
+}
+
+.card:hover {
+    box-shadow: 4px 10px 20px 4px #4B378C;
+}
+
+
+/*-------- /form --------*/
+
+.form-row {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 0.5rem;
+}
+
+.form-row label {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/*-- TextInput --*/
+
+.input-text {
+    font-weight: 500;
+    background-color: rgb(255, 255, 255);
+    padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+    border-width: 0.1rem;
+    border-color: #4B378C;
+    border-radius: 0.3rem;
+    -webkit-appearance: none;
+    outline: #4B378C;
+    outline-width: 0.1rem;
+}
+
+.input-text-block {
+    display: block;
+}
+
+.input-text:focus {
+    border-color: 2px solid #4B378C;
+}
+
+.input-text:disabled {
+    opacity: 0.7;
+    cursor: auto;
+}
+
+
+/*-- Button --*/
+
+.btn-submit,
+.btn-edit {
+    padding: 1rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.btn-submit {
+    background-color: #4B378C;
+    width: 100%;
+}
+
+
+/*-- /Button --*/
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-end {
+    justify-content: end;
+    justify-content: flex-end;
+}
+
+.m-2 {
+    margin: 2rem;
+}
+
+.my-1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mx-auto {
+    margin-right: 5rem;
+    margin-left: 5rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/************************************* FOOTER **************************************/
+
+.footer {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/leaderbord.css">
+    <!-- Connecting to style sheet: -->
+    <title>Re:invent 2018 Track</title>
+</head>
+
+<div class="menu-logo">
+    <a href="index.html"><img src="../src/photos/in4.0_logo_wide.png" alt="in4group"></a>
+    <!-- Logo -->
+</div>
+
+<div class="menu-bar">
+    <ul>
+        <li><a href="https://in4group.co.uk/">in4group</a></li>
+        <li><a href="https://aws.amazon.com/deepracer/">AWS</a></li>
+
+        <li><a>Leagues</a>
+            <div class="sub-menu-1">
+                <ul>
+                    <li><a href="get_leagues.html">All Leagues</a></li>
+                    <li><a href="sunday_league.html">Sunday League</a></li>
+                    <li><a href="december_league.html">December League</a></li>
+                </ul>
+            </div>
+
+            <li><a>Tracks</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="get_track.html">All Tracks</a></li>
+                        <li><a href="ovalbestLap.html">Oval Track</a></li>
+                        <li><a href="reinventbestLap.html">Re:Invent 2018 Track</a></li>
+                    </ul>
+                </div>
+
+                <li><a>Manage Race</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a href="register_player.html">Register Player</a></li>
+                            <li><a href="update_lap.html">Update Lap</a></li>
+                            <li><a href="add_league.html">Create League</a></li>
+                            <li><a href="add_track.html">Create Track</a></li>
+                        </ul>
+                    </div>
+    </ul>
+</div>
+
+<div class="menu-button">Sign In</div>
+
+<br>
+
+<img src="../src/photos/reInventtrack.svg" alt="re:Invent 2018 track">
+
+<h2 style="text-align:center; margin:34px;color: rgb(255,255,255);"> re:Invent 2018 Track</h2>
+
+
+<p style="text-align:center; margin:34px;color: rgb(255,255,255)">Inspired by Monza, re:Invent 2018 was the first Championship Cup track. This short, classic speedway remains a perennial rookie favorite.</p>
+<p style="text-align:center; margin:34px;color: rgb(255,255,255)"> Length: 17.6 m (57.97') Width: 76 cm (30") </p>
+
+<br>
+
+<h1 class="glow">re:Invent 2018 Track Leaderboard</h1>
+
+
+<script>
+    function bestLap() {
+        var request = new XMLHttpRequest()
+        request.open('GET', 'https://h6ixi3zn9d.execute-api.eu-west-1.amazonaws.com/leaderboard/track/re:invent%202018', true)
+        var raw_response;
+        request.onload = function() {
+            // Begin accessing JSON data here
+            raw_response = JSON.parse(this.response)
+
+            const leagues_list = []
+            for (var x = 0; x < raw_response['Items'].length; x++) {
+                leagues_list[x] = []
+                leagues_list[x].push(raw_response['Items'][x]['name'])
+                leagues_list[x].push(raw_response['Items'][x]['surname'])
+                leagues_list[x].push(raw_response['Items'][x]['bestLap'])
+            }
+
+            if (request.status >= 200 && request.status < 400) {
+                new gridjs.Grid({
+                    columns: ["Name", "Surname", "Best Lap"],
+                    search: true,
+                    data: leagues_list,
+                    resizable: true,
+                    sort: true
+                }).render(document.getElementById("bestLapTable"));
+            } else {
+                console.log('error')
+            }
+        }
+        request.send()
+    }
+</script>
+
+<body onload="bestLap()">
+
+    <div id="bestLapTable"></div>
+</body>
+
+</html>
