@@ -32,6 +32,7 @@
 .menu-bar {
     background: rgb(255, 255, 255);
     text-align: center;
+    font-size: small;
 }
 
 .menu-bar ul {
