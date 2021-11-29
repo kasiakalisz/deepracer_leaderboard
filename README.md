@@ -1,8 +1,10 @@
 
 Deepracer Project
+
 FrontEnd 
 - Technology: HTML, CSS, JavaScript.
-- Backend 
+
+Backend 
 - API Communication: Used fetch to communicate with the API.
 - Lambda
 - DynamoDB 
